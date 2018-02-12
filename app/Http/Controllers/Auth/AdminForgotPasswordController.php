@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace ProjectSam\Http\Controllers\Auth;
 
 
-use App\Http\Controllers\Controller;
+use ProjectSam\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
 use Password;

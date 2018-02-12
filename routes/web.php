@@ -34,3 +34,20 @@ Route::prefix('admin')->group(function()
     Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 
 });
+
+Route::prefix('docente')->group(function()
+{
+    Route::get('/login','Auth\DocenteLoginController@showLoginForm')->name('docente.login');
+    Route::post('/login', 'Auth\DocenteLoginController@login')->name('docente.login.submit');
+    Route::get('/','ControllerDocente@index')->name('docente.dashboard');
+    Route::get('/logout', 'Auth\DocenteLoginController@logout')->name('docente.logout');
+
+    Route::post('/password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('docente.password.email');
+    Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequestForm')->name('docente.password.request');
+    Route::post('/password/reset','Auth\AdminResetPasswordController@reset');
+    Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('docente.password.reset');
+});
+
+Route::get('index', function () {
+    return view('index');
+});

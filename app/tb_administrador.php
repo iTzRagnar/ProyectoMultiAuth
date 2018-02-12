@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace ProjectSam;
 
-use App\Http\Controllers\Auth\ResetPasswordController;
+use ProjectSam\Http\Controllers\Auth\ResetPasswordController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Notifications\AdminResetPasswordNotification;
+use ProjectSam\Notifications\AdminResetPasswordNotification;
 
 class tb_administrador extends Authenticatable
 {

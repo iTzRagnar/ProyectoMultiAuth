@@ -49,6 +49,10 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+        'docente' => [
+            'driver' => 'session',
+            'provider' => 'docentes',
+        ],
     ],
 
     /*
@@ -71,13 +75,16 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => ProjectSam\User::class,
         ],
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\tb_administrador::class,
         ],
-
+        'docentes' => [
+            'driver' => 'eloquent',
+            'model' => App\tb_docente::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -111,6 +118,12 @@ return [
             'table' => 'password_resets',
             'expire' => 15,
         ],
+        'docentes'=>
+            [
+                'provider' => 'docentes',
+                'table' => 'password_resets',
+                'expire' => 15,
+            ],
     ],
 
 ];
